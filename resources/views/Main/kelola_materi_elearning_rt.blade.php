@@ -104,7 +104,7 @@
                     class="block text-gray-800 font-medium py-3 px-4 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors">
                     <i class="bi bi-gear mr-3"></i>Kelola Materi
                 </a>
-                <a href="/dashboardAdmin"
+                <a href="/uploadMateri"
                     class="block text-gray-800 font-medium py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
                     <i class="bi bi-plus-circle mr-3"></i>Tambah Materi
                     
