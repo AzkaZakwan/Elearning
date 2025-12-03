@@ -91,12 +91,12 @@
                     class="block text-gray-800 font-medium py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
                     <i class="bi bi-journal-bookmark mr-3"></i>Belajar
                 </a>
-                @auth
-                <a href="/profile"
-                    class="block text-gray-800 font-medium py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
-                    <i class="bi bi-person mr-3"></i>Profile
-                </a>
-                @endauth 
+                @if (session('user'))                                    
+                    <a href="/profile"
+                        class="block text-gray-800 font-medium py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="bi bi-person mr-3"></i>Profile
+                    </a>
+                @endif
             </nav>
 
         </div>
@@ -120,12 +120,12 @@
                     class="text-gray-800 font-medium py-2 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 transition-colors whitespace-nowrap">
                     Belajar
                 </a>
-                @auth                     
-                <a href="/profile"
-                    class="text-gray-800 font-medium py-2 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 transition-colors whitespace-nowrap">
-                    Profile
-                </a>
-                @endauth
+                @if (session('user'))                                    
+                    <a href="/profile"
+                        class="text-gray-800 font-medium py-2 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 transition-colors whitespace-nowrap">
+                        Profile
+                    </a>
+                @endif
             </div>
 
             <!-- Desktop Keluar Button -->
