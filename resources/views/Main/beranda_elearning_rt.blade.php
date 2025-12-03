@@ -57,11 +57,6 @@
                 </a>
             </div>
 
-            <!-- Right: Red Button -->
-            {{-- <button
-                class="absolute right-4 bg-red-500 hover:bg-red-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow transition-colors">
-                Keluar
-            </button> --}}
         </div>
     </div>
 
@@ -96,19 +91,14 @@
                     class="block text-gray-800 font-medium py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
                     <i class="bi bi-journal-bookmark mr-3"></i>Belajar
                 </a>
+                @auth
                 <a href="/profile"
                     class="block text-gray-800 font-medium py-3 px-4 rounded-lg hover:bg-gray-200 transition-colors">
                     <i class="bi bi-person mr-3"></i>Profile
                 </a>
+                @endauth 
             </nav>
 
-            <!-- Mobile Keluar Button -->
-            {{-- <div class="absolute bottom-6 left-6 right-6">
-                <button
-                    class="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-red-700 transition-colors">
-                    <i class="bi bi-box-arrow-right mr-2"></i>Keluar
-                </button>
-            </div> --}}
         </div>
 
         <!-- Desktop Navigation Content -->
@@ -130,10 +120,12 @@
                     class="text-gray-800 font-medium py-2 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 transition-colors whitespace-nowrap">
                     Belajar
                 </a>
+                @auth                     
                 <a href="/profile"
                     class="text-gray-800 font-medium py-2 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 transition-colors whitespace-nowrap">
                     Profile
                 </a>
+                @endauth
             </div>
 
             <!-- Desktop Keluar Button -->
