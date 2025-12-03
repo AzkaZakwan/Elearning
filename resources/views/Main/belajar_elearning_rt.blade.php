@@ -163,12 +163,12 @@
                 x-transition.opacity.duration.500ms
                 class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
 
-                {{-- Sukses
+                {{-- Sukses --}}
                 @if(session('success'))
                     <div class="px-4 py-3 rounded-lg shadow-md text-white text-sm bg-green-600">
                         {{ session('success') }}
                     </div>
-                @endif --}}
+                @endif
 
                 {{-- Error Manual --}}
                 @if(session('error'))
