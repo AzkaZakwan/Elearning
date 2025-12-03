@@ -172,6 +172,20 @@
                 <h1 class="text-2xl lg:text-3xl font-bold text-center lg:-mt-5 -mt-3">
                     Materi 
                 </h1>
+                <form action="{{ route('kelolaSearch') }}" method="GET" 
+                    class="mt-6 mb-4 flex justify-end">
+                    <input type="text" 
+                        name="search"
+                        value="{{ request('search') }}"
+                        placeholder="Cari materi..."
+                        class="border border-gray-300 rounded-lg px-4 py-2 w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+
+                    <button type="submit"
+                            class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
                 {{-- Alert --}}
                 @if (session('success') || session('error') || $errors->any())
                     <div 
@@ -181,12 +195,12 @@
                         x-transition.opacity.duration.500ms
                         class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
 
-                        {{-- Sukses --}}
+                        {{-- Sukses
                         @if(session('success'))
                             <div class="px-4 py-3 rounded-lg shadow-md text-white text-sm bg-green-600">
                                 {{ session('success') }}
                             </div>
-                        @endif
+                        @endif --}}
 
                         {{-- Error Manual --}}
                         @if(session('error'))

@@ -42,6 +42,7 @@ Route::middleware([KomenRole::class])->group(function(){
 // Middleware user
 Route::middleware([UserRole::class . ':user'])->group(function(){
     Route::get('/belajar', [MateriController::class, 'lihatMateri'])->name('lihatMateri');
+    Route::get('/belajar/search', [MateriController::class, 'search'])->name('search');
     Route::get('/download-materi/{id}', [MateriController::class, 'download'])->name('download');
     Route::post('/komen/{id}/report', [MateriController::class, 'lapor'])->name('report.komen');
     Route::get('/profile', [MainController::class, 'profile'])->name('profile');    
@@ -56,6 +57,7 @@ Route::middleware([UserRole::class . ':admin'])->group(function(){
     Route::get('/kelolaMateri', [KelolaController::class, 'kelola'])->name('kelolaMateri');
     Route::put('/kelolaMateri/update/{id}', [KelolaController::class, 'edit'])->name('editMateri');
     Route::delete('/kelolaMateri/hapus/{id}', [KelolaController::class, 'hapus'])->name('hapusMateri');
+    Route::get('/kelolaMateri/search', [MateriController::class, 'kelolaSearch'])->name('kelolaSearch');
     // Kelola report
     Route::get('/kelolaReport', [KelolaController::class, 'kelolaReport'])->name('kelolaReport');
     Route::post('/hapusReport/{id}', [KelolaController::class, 'hapusReport'])->name('hapusReport');

@@ -10,8 +10,6 @@ use Illuminate\Support\Str;
 
 class MateriController extends Controller
 {
-
-
     public function tambahMateri(Request $req)
     {
         $rule = [
@@ -139,4 +137,28 @@ class MateriController extends Controller
         return back()->with('success', 'Komentar berhasil dilaporkan');           
     }
 
+    public function search(Request $req)
+    {
+        $materi = Materi::when($req->search, function ($q, $search) {
+            return $q->where('judul', 'like', "%$search%");
+        })->get()->map(function ($item) {
+            $item->slug = Str::slug($item->judul);
+            return $item;
+        });
+
+        return view('Main.belajar_elearning_rt', compact('materi'));
+    }
+
+    public function kelolaSearch(Request $req)
+    {
+        // search admin
+        $materi = Materi::when($req->search, function ($q, $search) {
+            return $q->where('judul', 'like', "%$search%");
+        })->get()->map(function ($item) {
+            $item->slug = Str::slug($item->judul);
+            return $item;
+        });
+
+        return view('Main.kelola_materi_elearning_rt', compact('materi'));
+    }
 }

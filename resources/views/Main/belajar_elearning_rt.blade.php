@@ -54,7 +54,7 @@
             <!-- Middle: Logo -->
             <div class="flex items-center justify-center leading-tight mx-auto">
                 <a href="/">
-                    <img src="img/Logo Rukun Tetangga.png" class="w-14 h-14" alt="">                
+                    <img src="/img/Logo Rukun Tetangga.png" class="w-14 h-14" alt="">                
                 </a>
             </div>
 
@@ -83,7 +83,7 @@
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center justify-center leading-tight">
                     <a href="/">
-                        <img src="img/Logo Rukun Tetangga.png" class="w-16 h-16" alt="">
+                        <img src="/img/Logo Rukun Tetangga.png" class="w-16 h-16" alt="">
                     </a>
                 </div>
                 <button id="closeMenu" class="text-gray-600 hover:text-gray-800 transition-colors">
@@ -123,7 +123,7 @@
             <!-- Desktop Logo -->
             <div class="flex items-center justify-center leading-tight">
                 <a href="/">
-                    <img src="img/Logo Rukun Tetangga.png" class="w-16 h-16" alt="">
+                    <img src="/img/Logo Rukun Tetangga.png" class="w-16 h-16" alt="">
                 </a>
             </div>
 
@@ -163,12 +163,12 @@
                 x-transition.opacity.duration.500ms
                 class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
 
-                {{-- Sukses --}}
+                {{-- Sukses
                 @if(session('success'))
                     <div class="px-4 py-3 rounded-lg shadow-md text-white text-sm bg-green-600">
                         {{ session('success') }}
                     </div>
-                @endif
+                @endif --}}
 
                 {{-- Error Manual --}}
                 @if(session('error'))
@@ -198,6 +198,19 @@
                 <h1 class="text-2xl lg:text-3xl font-bold text-center lg:-mt-5 -mt-3">
                     Materi Pembelajaran
                 </h1>
+                <form action="{{ route('search') }}" method="GET" class="mt-5 flex justify-end">
+                    <input 
+                        type="text" 
+                        name="search"
+                        value="{{ request('search') }}"
+                        placeholder="Cari materi..." 
+                        class="border border-gray-300 rounded-lg px-4 py-2 w-64 shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <button 
+                        type="submit" 
+                        class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
                 <!-- Table Container -->
                 <div class="overflow-x-auto rounded-xl shadow-md lg:mt-5 mt-3">
                     <table class="w-full min-w-[640px] divide-y divide-gray-200">

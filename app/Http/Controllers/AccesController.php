@@ -49,8 +49,8 @@ class AccesController extends Controller
         }
         session(['user' => $user->only(['id', 'nama', 'email', 'role']) ]);
         if ($user->role === 'admin'){
-            return redirect()->route('kelolaMateri')->with('success', 'login berhasil');
+            return redirect()->route('kelolaMateri');
         }
-        return redirect()->route('lihatMateri')->with('success', 'login berhasil');
+        return redirect()->route('lihatMateri');
     } 
 }
